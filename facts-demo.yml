@@ -26,7 +26,7 @@
         content: |
           #jinja2: lstrip_blocks: True
           IOS device info:
-            {% for host in groups['ios'] %}
+            {% for host in groups['test-swtiches'] %}
             Hostname: {{ hostvars[host].ansible_net_hostname }}
             Version: {{ hostvars[host].ansible_net_version }}
             Model: {{ hostvars[host].ansible_net_model }}
