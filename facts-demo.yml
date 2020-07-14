@@ -1,5 +1,6 @@
 - name: "Demonstrate connecting to switches"
-  gather_facts: no
+  hosts: all
+  gather_factsgather_facts: no
 
   tasks:
     ###
