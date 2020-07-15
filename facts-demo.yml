@@ -17,7 +17,7 @@
       debug:
         msg: "Hostname: {{ ansible_net_hostname }} 
               OS: {{ ansible_net_version }}
-              Version: {{ hostvars[host].ansible_net_version }}
-              Model: Model: {{ hostvars[host].ansible_net_model }}
-              Serial: {{ hostvars[host].ansible_net_serialnum }}"
+              Version: {{ ansible_net_version }}
+              Model: Model: {{ ansible_net_model }}
+              Serial: {{ ansible_net_serialnum }}"
    
