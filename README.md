@@ -2,8 +2,10 @@
 
 ## How to use this GIT
 
-It's just a DEMO 
+You can include this GIT into your Ansible Tower to gather IOS facts
 
 #### Instructions
+
+Add this GIT to PROJECTS in AT
 
 

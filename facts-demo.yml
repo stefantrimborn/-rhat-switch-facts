@@ -13,36 +13,11 @@
     ###
     # Demonstrate variables
     #
-    - name: Display some facts
+    - name: Display facts
       debug:
-        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
-
-    - name: Facts from a specific host
-      debug:
-        var: hostvars['bill.sttproductions.de']
-
-    - name: Write facts to disk using a template
-      copy:
-        content: |
-          #jinja2: lstrip_blocks: True
-          IOS device info:
-            {% for host in groups['test-switches'] %}
-            Hostname: {{ hostvars[host].ansible_net_hostname }}
-            Version: {{ hostvars[host].ansible_net_version }}
-            Model: {{ hostvars[host].ansible_net_model }}
-            Serial: {{ hostvars[host].ansible_net_serialnum }}
-            {% endfor %}
-
-        dest: /tmp/switch-facts
-      run_once: yes
-
-    ###
-    # Get running configuration
-    #
-
-    - name: Create backup dir
-      file:
-        path: "/tmp/backups/{{ inventory_hostname }}"
-        state: directory
-        recurse: yes
-
+        msg: "Hostname: {{ ansible_net_hostname }} 
+              OS: {{ ansible_net_version }}
+              Version: {{ hostvars[host].ansible_net_version }}
+              Model: Model: {{ hostvars[host].ansible_net_model }}
+              Serial: {{ hostvars[host].ansible_net_serialnum }}"
+   
